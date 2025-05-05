@@ -4,6 +4,19 @@ This is a utility to explore files and files content
 
 ## Installation
 
+### Linux
+
+```bash
+# Download the binary
+curl -L -o seekust https://github.com/asoto/seekust/releases/download/latest/seekust-linux-amd64
+
+# Make it executable
+chmod +x seekust
+
+# Move to a directory in your PATH
+sudo mv seekust /usr/local/bin/
+```
+
 ### macOS
 
 ```bash

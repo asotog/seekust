@@ -40,19 +40,6 @@ jobs:
         with:
           name: ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}
-          body: |
-            ## Installation for macOS
-
-            ```bash
-            # Download the binary
-            curl -L -o seekust https://github.com/asoto/seekust/releases/download/${{ github.ref_name }}/seekust-macos-amd64
-
-            # Make it executable
-            chmod +x seekust
-
-            # Move to a directory in your PATH
-            sudo mv seekust /usr/local/bin/
-            ```
           files: target/release/${{ matrix.asset_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

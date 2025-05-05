@@ -2,7 +2,24 @@
 
 This is a utility to explore files and files content
 
-## Getting Started
+## Installation
+
+### macOS
+
+```bash
+# Download the binary
+curl -L -o seekust https://github.com/asoto/seekust/releases/download/latest/seekust-macos-amd64
+
+# Make it executable
+chmod +x seekust
+
+# Move to a directory in your PATH
+sudo mv seekust /usr/local/bin/
+```
+
+## Development
+
+### Getting Started
 
 To build and run the application, follow these steps:
 
@@ -27,7 +44,7 @@ To build and run the application, follow these steps:
    cargo run
    ```
 
-## Running Tests
+### Running Tests
 
 To run the integration tests, use the following command:
 
@@ -35,7 +52,7 @@ To run the integration tests, use the following command:
 cargo test
 ```
 
-## Project Structure
+### Project Structure
 
 - `src/main.rs`: Entry point of the application.
 - `tests/integration_tests.rs`: Contains integration tests for the application.

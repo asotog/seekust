@@ -1,3 +1,3 @@
 # Benchmark
 
-Run Seekust vrs find/grep, the test tries to finds all the "console" words on given folder recursively.
+Run Seekust vrs find/grep, the test tries to find all the "console" words on a given folder recursively.

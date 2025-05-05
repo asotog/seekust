@@ -18,6 +18,10 @@ pub struct Match {
 /// * `None` - If the file cannot be read or no matches are found
 pub fn search_in_file(file_path: &Path, search_str: &str) -> Option<Vec<Match>> {
     fs::read_to_string(file_path).ok().and_then(|contents| {
+        if !contents.contains(search_str) {
+            return None;
+        }
+        
         let matches: Vec<Match> = contents
             .lines()
             .enumerate()

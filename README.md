@@ -30,6 +30,17 @@ chmod +x seekust
 sudo mv seekust /usr/local/bin/
 ```
 
+## Usage
+
+```bash
+# Basic usage (search any text in current directory)
+seekust "your search text"
+
+# Examples
+seekust "TODO"          # Find files containing "TODO"
+seekust "fn main"       # Find files containing "fn main"
+```
+
 ## Development
 
 ### Getting Started

@@ -4,6 +4,12 @@ use seekust::scan_dir;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    
+    if args.len() < 2 {
+        println!("Missing arguments :(");
+        return;
+    }
+
     println!("Searching files containing: {}", args[1]);
     
     if !scan_dir::find(Path::new("."), &args[1]) {

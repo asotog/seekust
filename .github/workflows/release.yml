@@ -1,7 +1,7 @@
 name: Release
 
 on:
-  workflow_dispatch: # Allows manual triggering
+  workflow_dispatch:
   push:
     tags:
       - "v*"
@@ -35,7 +35,7 @@ jobs:
           strip ${{ matrix.artifact_name }}
           mv ${{ matrix.artifact_name }} ${{ matrix.asset_name }}
 
-      - name: Upload binary to release
+      - name: Upload binary to versioned release
         uses: softprops/action-gh-release@v1
         with:
           name: ${{ github.ref_name }}
@@ -44,21 +44,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  update-latest:
-    name: Update Latest Tag
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Update latest tag
+      - name: Upload binary to latest release
         uses: softprops/action-gh-release@v1
         with:
           name: "Latest Release"
           tag_name: "latest"
-          files: target/release/*
-          prerelease: false
-          draft: false
-          make_latest: true
+          files: target/release/${{ matrix.asset_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

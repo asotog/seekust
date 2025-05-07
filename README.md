@@ -8,7 +8,7 @@ This is a utility to explore files and files content
 
 ```bash
 # Download the binary
-curl -L -o seekust https://github.com/asotog/seekust/releases/download/v0.0.4/seekust-linux-amd64
+curl -L -o seekust https://github.com/asotog/seekust/releases/download/latest/seekust-linux-amd64
 
 # Make it executable
 chmod +x seekust

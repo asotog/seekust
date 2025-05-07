@@ -43,3 +43,22 @@ jobs:
           files: target/release/${{ matrix.asset_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update-latest:
+    name: Update Latest Tag
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update latest tag
+        uses: softprops/action-gh-release@v1
+        with:
+          name: "Latest Release"
+          tag_name: "latest"
+          files: target/release/*
+          prerelease: false
+          draft: false
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

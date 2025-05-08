@@ -30,7 +30,7 @@ jobs:
         run: cargo build --release
 
       - name: Test binary execution
-        run: ./target/release/${{ matrix.artifact_name }}
+        run: ./target/release/${{ matrix.artifact_name }} "test"
 
       - name: Prepare binary
         run: |

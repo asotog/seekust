@@ -36,9 +36,22 @@ sudo mv seekust /usr/local/bin/
 # Basic usage (search any text in current directory)
 seekust "your search text"
 
+# Command format
+seekust [OPTIONS] <SEARCH_TEXT>
+
+# Arguments:
+#   <SEARCH_TEXT>                    Pattern to search for in files
+
+# Options:
+#   -i, --ignore-pattern <PATTERN>   Ignore files/folders matching this pattern
+#   -h, --help                       Print help
+#   -V, --version                    Print version
+
 # Examples
-seekust "TODO"          # Find files containing "TODO"
-seekust "fn main"       # Find files containing "fn main"
+seekust "TODO"                       # Find files containing "TODO"
+seekust "fn main"                    # Find files containing "fn main"
+seekust -i "node_modules" "TODO"     # Find "TODO" ignoring node_modules directory
+seekust --ignore-pattern ".git" "fn" # Find "fn" ignoring .git directory
 ```
 
 ## Development
